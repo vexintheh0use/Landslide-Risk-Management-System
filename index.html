@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NER Landslide Risk Command Center</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<header>
+<div class="logo-area">
+<h1>NER Landslide Command Center</h1>
+<span class="live-indicator"><span class="dot"></span> SYSTEM LIVE</span>
+</div>
+<div class="controls">
+<select id="stateFilter">
+<option value="all">All NER States (Overview)</option>
+<option value="assam">Assam</option>
+<option value="meghalaya">Meghalaya</option>
+<option value="sikkim">Sikkim</option>
+</select>
+</div>
+</header>
+<main class="dashboard">
+<div class="main-column">
+<section class="panel map-section">
+<h2>Real-Time GIS Mapping</h2>
+<div class="map-container">
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3595370.8353381413!2d92.5!3d26.2!2m3!1f0!2f1!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</section>
+<section class="panel chart-section">
+<h2>7-Day Precipitation Trends (mm)</h2>
+<div class="chart-container">
+<canvas id="rainfallChart"></canvas>
+</div>
+</section>
+</div>
+<div class="side-column">
+<section class="panel sensor-section">
+<h2>Regional Sensor Telemetry</h2>
+<div class="metric-grid">
+<div class="metric-box">
+<span class="metric-title">Soil Moisture</span>
+<span class="metric-value" id="moistureVal">--%</span>
+</div>
+<div class="metric-box">
+<span class="metric-title">Current Rain</span>
+<span class="metric-value" id="rainVal">-- mm/h</span>
+</div>
+<div class="metric-box">
+<span class="metric-title">Seismic Status</span>
+<span class="metric-value" id="seismicVal">Stable</span>
+</div>
+</div>
+</section>
+<section class="panel alerts-section">
+<h2>Automated Risk Alerts</h2>
+<div id="alertsList" class="alerts-list"></div>
+</section>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
